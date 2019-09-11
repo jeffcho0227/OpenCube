@@ -24,4 +24,6 @@ yarn-error.log*
 
 
 #firebase
-src/firebase/
+
+#stripe
+src/config/
