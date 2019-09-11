@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
 import Homepage from './pages/homepage/homepage.component.jsx';
-import ShopPage from './pages/shop/shop.component.jsx';
+import ShopPage from './pages/shopPage/shopPage.component.jsx';
 import Checkout from './pages/checkout/checkout.component.jsx';
 import Header from './components/header/header.component.jsx';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-out.component.jsx';
