@@ -19,6 +19,8 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
+import { selectCollectionForPreview } from './redux/shop/shop.selector.js';
+
 library.add(fab);
 
 class App extends React.Component {
@@ -40,6 +42,8 @@ class App extends React.Component {
         })
       }
       setCurrentUser(userAuth);
+      //the line below is to add collection data to firebase
+      // addCollectionAndDocuments('collection', collectionsArray.map(({title, items}) => ({title, items})))
     })
   }
 
@@ -65,7 +69,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser, 
+  // collectionsArray: selectCollectionForPreview
 })
 
 const mapDispatchToProps = dispatch => ({

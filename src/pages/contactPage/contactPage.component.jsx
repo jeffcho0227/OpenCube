@@ -10,7 +10,7 @@ const ContactPage = () => {
       <p className={style.description}>
         HI!! Thank you for visiting. I am Jeff, and I am a software developer
         <br />
-        This is an mock ecommerce website that I built using React, Redux, and Firebase.
+        This is a mock e-commerce website that I built using React, Redux, and Firebase.
         <br />
         Feel free to contact me if you have any question!!
       </p>
