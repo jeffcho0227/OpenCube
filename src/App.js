@@ -8,6 +8,7 @@ import Homepage from './pages/homepage/homepage.component.jsx';
 import ShopPage from './pages/shopPage/shopPage.component.jsx';
 import Checkout from './pages/checkout/checkout.component.jsx';
 import Header from './components/header/header.component.jsx';
+import ContactPage from './pages/contactPage/contactPage.component.jsx';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-out.component.jsx';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils.js';
 
@@ -15,6 +16,10 @@ import { setCurrentUser } from './redux/user/user.action.js';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+library.add(fab);
 
 class App extends React.Component {
 
@@ -43,6 +48,7 @@ class App extends React.Component {
   }
 
   render () {
+
     return (
       <div>
         <Header />
@@ -50,6 +56,7 @@ class App extends React.Component {
           <Route exact path='/' component={Homepage}/>
           <Route path='/shop' component={ShopPage}/>
           <Route path='/checkout' component={Checkout}/>
+          <Route path='/contact' component={ContactPage}/>
           <Route path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : <SignInAndSignUp />}/>
         </Switch>
       </div>

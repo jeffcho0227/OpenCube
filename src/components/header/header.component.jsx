@@ -12,13 +12,25 @@ import { selectCurrentUser } from '../../redux/user/user.selectors.js';
 import style from './header.module.scss';
 
 const Header = ({ currentUser, hidden }) => {
-  
+  console.log(currentUser, 'header');
+  let displayName = null;
+  if (currentUser) {
+    displayName = currentUser.displayName.split(' ');
+  }
+
   return (
     <div className={style.header}>
       <Link className={style.logo_container} to='/'>
         HOME
       </Link>
       <div className={style.options}>
+        {
+          currentUser ? 
+          ( 
+            <div className={style.displayName}>Welcome {displayName[displayName.length-1]}</div>
+          )
+          : null
+        }
         <Link className={style.option} to='/shop'>
           SHOP
         </Link>
